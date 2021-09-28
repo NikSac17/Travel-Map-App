@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const dotenv = require("dotenv");
 
 const pinRoute = require("./routes/pin");
@@ -9,6 +10,7 @@ const app = express();
 
 dotenv.config();
 
+app.use(cors());
 app.use(express.json()); //to send req body ~~~~
 
 const port = 5000;
